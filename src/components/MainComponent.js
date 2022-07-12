@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
+import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
@@ -41,6 +42,13 @@ class Main extends Component {
             );
         };
 
+        const AboutUsPage = () => {
+            return(
+                <About 
+                    leaders={this.state.leaders}
+                />
+            );
+        };
 
 
         const DishWithId = ({match}) => {
@@ -68,7 +76,7 @@ class Main extends Component {
                     <Route path="/menu/:dishId" component={DishWithId} />
 
                     <Route exact path="/contactus" component={Contact } />
-                   
+                    <Route exact path="/aboutus" component={ AboutUsPage } />
                    
                     {/* if url dosesnt match, bydefault redirect to */}
                     <Redirect to="/home" />
